@@ -26,7 +26,7 @@ if(!empty($nom) && isset($nom) && !empty($prenom) && isset($prenom) && !empty($a
     echo "table importées";
 }
 $listeVilles = getVilles();
-$listeEtats = getEtats();
+$listeEtats = getEtats(); 
 
 // traitement si necessaire des donnees recuperees
 ;
