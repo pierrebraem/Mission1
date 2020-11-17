@@ -3,12 +3,12 @@ header( 'content-type: text/html; charset=utf-8' );
 
 include_once "bd.inc.php";
 
-function deleteProspect($id) {
+function modifProspect($id) {
     $resultat = array();
 
     try {
-        deleteProspectProspect($id);
-        deletePraticienProspect($id);
+        Prospect($id);
+        
 
 
     } catch (PDOException $e) {
@@ -18,7 +18,7 @@ function deleteProspect($id) {
     return $resultat;
 }
 
-function deleteProspectProspect($id)
+function modifvilleProspect($id)
 {
     try{
         $cnx = connexionPDO();

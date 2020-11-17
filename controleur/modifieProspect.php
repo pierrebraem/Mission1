@@ -7,14 +7,21 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 include_once "$racine/modele/bd.listeProspects.inc.php";
 include_once "$racine/modele/bd.ville.inc.php";
 include_once "$racine/modele/bd.etat.inc.php";
+include_once "$racine/modele/bd.modifProspect.inc.php";
 
 // recuperation des donnees GET, POST, et SESSION
-
-//todo
 if (!empty($_POST))
 {
+    $id = $_POST['submit'];
 }
 ;
+//todo
+if(!empty($id) && isset($id))
+{
+    // appel des fonctions permettant de rajouter les donnees dans les bases de données.
+    modifProspect($id);
+    echo "Prospect id=$id modifier";
+}
 //todo test des valeurs dans poste puis modification dans modele.
 ;
 
