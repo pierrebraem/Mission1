@@ -3,11 +3,11 @@ header( 'content-type: text/html; charset=utf-8' );
 
 include_once "bd.inc.php";
 
-function modifProspect($id) {
+function modifProspect($id,$id_etat) {
     $resultat = array();
 
     try {
-        Prospect($id);
+        modifprospectProspect($id,$id_etat);
         
 
 
@@ -18,26 +18,13 @@ function modifProspect($id) {
     return $resultat;
 }
 
-function modifvilleProspect($id)
-{
-    try{
-        $cnx = connexionPDO();
-        //Supprimer dans table prospect avec l'id_praticien
-        $req = $cnx->prepare("DELETE FROM `prospect` WHERE `id_praticien` = $id");
-        $req->execute();
-    }
-    catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-}
 
-function deletePraticienProspect($id)
+function modifprospectProspect($id,$id_etat)
 {
     try{
         $cnx = connexionPDO();
         //Supprimer dans table prospect avec l'id_praticien
-        $req = $cnx->prepare("DELETE FROM `praticien` WHERE `id` = $id");
+        $req = $cnx->prepare("");
         $req->execute();
     }
     catch (PDOException $e) {
@@ -52,6 +39,6 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     header('Content-Type:text/plain');
 
     echo "getProspects() : \n";
-    //print_r(deleteProspect());
+    //print_r(modifProspect());
 }
 ?>

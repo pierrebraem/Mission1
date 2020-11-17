@@ -19,7 +19,7 @@ if (!empty($_POST))
 if(!empty($id) && isset($id))
 {
     // appel des fonctions permettant de rajouter les donnees dans les bases de données.
-    modifProspect($id);
+    modifProspect($id,$id_etat);
     echo "Prospect id=$id modifier";
 }
 //todo test des valeurs dans poste puis modification dans modele.
