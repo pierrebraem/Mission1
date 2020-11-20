@@ -9,7 +9,7 @@ function controleurPrincipal($action) {
     $lesActions["ajout"] = "ajoutProspect.php";
     $lesActions["modifie"] = "modifieProspect.php";
     $lesActions["supprime"] = "supprimeProspect.php";
-    $lesActions["listeclient"] = "listeClient.php";
+    $lesActions["client"] = "Client.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

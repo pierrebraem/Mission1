@@ -34,7 +34,8 @@ $listeEtats = getEtats();
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Gestion des praticiens répertoriés";
 include "$racine/vue/entete.html.php";
-include "$racine/vue/vueAjout.php";
+//include "$racine/vue/vueAjout.php";
+include "$racine/vue/vueListeProspect.php";
 include "$racine/vue/pied.html.php";
 
 

@@ -16,12 +16,13 @@
             
         <ul id="menuGeneral">
             <li><a href="./?action=default">Accueil</a></li> 
-            <li><a href="./?action=liste">liste Prospects</a></li>
-            <li><a href="./?action=ajout">Ajouter Prospect</a></li> 
-
+            <!--<li><a href="./?action=liste">liste Prospects</a></li>
+            <li><a href="./?action=ajout">Ajouter Prospect</a></li> --> 
+            <li><a href="./?action=client">Client</a></li>
+            <li><a href="./?action=liste">Prospects</a></li>
             <li id="logo"><a href="./?action=default"><img src="images/logoBarre.png" alt="logo" /></a></li>
-            <li><a href="./?action=supprime">Supprimer Prospect</a>></li> 
-            <li><a href="./?action=modifie">Modifier Prospect</a></li>
+            <!-- <li><a href="./?action=supprime">Supprimer Prospect</a>></li> 
+            <li><a href="./?action=modifie">Modifier Prospect</a></li> -->
             <li></li>
         </ul>
     </nav>
