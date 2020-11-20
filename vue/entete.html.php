@@ -12,19 +12,17 @@
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">   
-        <ul id="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="./?action=default">Accueil</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prospects</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="./?action=liste">liste Prospects</a>
-                    <a class="dropdown-item" href="./?action=ajout">Ajouter Prospect</a>
-                    <a class="dropdown-item" href="./?action=supprime">Supprimer Prospect</a>
-                    <a class="dropdown-item" href="./?action=modifie">Modifier Prospect</a>
-                </div>
-            </li>
+    <nav>
+            
+        <ul id="menuGeneral">
+            <li><a href="./?action=default">Accueil</a></li> 
+            <li><a href="./?action=liste">liste Prospects</a></li>
+            <li><a href="./?action=ajout">Ajouter Prospect</a></li> 
+
             <li id="logo"><a href="./?action=default"><img src="images/logoBarre.png" alt="logo" /></a></li>
+            <li><a href="./?action=supprime">Supprimer Prospect</a>></li> 
+            <li><a href="./?action=modifie">Modifier Prospect</a></li>
+            <li></li>
         </ul>
     </nav>
     <div id="bouton">
