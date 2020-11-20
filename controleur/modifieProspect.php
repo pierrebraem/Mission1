@@ -8,12 +8,14 @@ include_once "$racine/modele/bd.listeProspects.inc.php";
 include_once "$racine/modele/bd.ville.inc.php";
 include_once "$racine/modele/bd.etat.inc.php";
 include_once "$racine/modele/bd.modifProspect.inc.php";
-include_once "$racine/modele/bd.listepraticient.inc.php";
+include_once "$racine/modele/bd.praticient.inc.php";
 
 // recuperation des donnees GET, POST, et SESSION
 if (!empty($_POST))
 {
-    $id = $_POST['submit'];
+    $id_praticien = $_POST['praticient'];
+    $id_ville = $_POST['ville'];
+    $id_etat = $_POST['etat'];
 };
 //todo
 if(!empty($id) && isset($id))

@@ -52,6 +52,6 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     header('Content-Type:text/plain');
 
     echo "getProspects() : \n";
-    //print_r(deleteProspect());
+    print_r(deleteProspect($id));
 }
 ?>

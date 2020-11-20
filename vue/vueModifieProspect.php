@@ -71,7 +71,7 @@ foreach ($listeProspects as $unprospect)
         </div>
 
         <div class="button">
-            <button type="submit" name ="submit" value = <?php echo $unprospect['idPraticien'];?>> Valider</button>
+            <button type="submit" name ="submit" value = ""> Valider</button>
         </div>
         </p>
     </form>
