@@ -8,13 +8,13 @@ include_once "$racine/modele/bd.listeProspects.inc.php";
 include_once "$racine/modele/bd.ville.inc.php";
 include_once "$racine/modele/bd.etat.inc.php";
 include_once "$racine/modele/bd.modifProspect.inc.php";
+include_once "$racine/modele/bd.listepraticient.inc.php";
 
 // recuperation des donnees GET, POST, et SESSION
 if (!empty($_POST))
 {
     $id = $_POST['submit'];
-}
-;
+};
 //todo
 if(!empty($id) && isset($id))
 {
@@ -29,6 +29,7 @@ if(!empty($id) && isset($id))
 $listeProspects = getProspects();
 $listeVilles = getVilles();
 $listeEtats = getEtats();
+$listePraticiens = getPraticiens();
 
 // appel du script de vue qui permet de gerer l'affichage des donnees
 $titre = "Liste des prospects répertoriés";

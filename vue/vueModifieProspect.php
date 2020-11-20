@@ -5,33 +5,28 @@
 foreach ($listeProspects as $unprospect)
 { 
 ?>
-    <!--<div class="prospect">
-        <h2 id="adresse">
-            Prospect
-        </h2>
-    <p>
-        <strong>Nom</strong> : <?php echo $unprospect['praticienNom']; ?><br />
-        <strong>prenom</strong> : <?php echo $unprospect['prenom']; ?><br />
-        <strong>adresse</strong> : <?php echo $unprospect['adresse']; ?><br />
-        <strong>ville</strong> : <?php echo $unprospect['villeNom']; ?><br />
-        <strong>Code Postal</strong> : <?php echo $unprospect['code_postal']; ?><br />
-        <strong>Etat</strong> : <?php echo $unprospect['nomEtat']; ?><br />
-        </p>
-    </div>!-->
 
-    <form $action="valider" method="post">
 
-        <div>
-            <label for="name">Nom :</label>
-            <input type="nom" id="name" name="user_name" value="<?= $unprospect['praticienNom'];?>">
-        </div>
-        <div>
-            <label for="prenom">Prenom :</label>
-            <input type="prenom" id="name" name="user_prenom" value="<?= $unprospect['prenom']; ?>">
-        </div>
-        <div>
-            <label for="adresse">Adresse :</label>
-            <input type="adresse" id="name" name="user_adresse" value="<?= $unprospect['adresse']; ?>">
+    <form $action="modif" method="post">
+    <?php //echo var_dump($listePraticiens); ?> <!-- !-->
+    <div>
+        <label for="praticient">Praticient :</label>
+        <select name="praticient" id="praticient-select">
+            <?php
+                foreach ($listePraticiens as $unPraticien)
+                { 
+                    if($unPraticien['id'] === $unprospect['idPraticien']):
+                ?> 
+                    <option value=<?php echo $unPraticien['id']; ?> selected> <?php echo $unPraticien['nom']; ?>, <?php echo $unPraticien['prenom']; ?>, <?php echo $unPraticien['ville_nom'];?> </option>
+                <?php
+                    else:
+                ?>
+                    <option value=<?php echo $unPraticien['id']; ?>> <?php echo $unPraticien['nom']; ?>, <?php echo $unPraticien['prenom']; ?>, <?php echo $unPraticien['ville_nom'];?> </option>
+                <?php
+                    endif;
+                }
+                ?>
+        </select>
         </div>
 
         <div>
