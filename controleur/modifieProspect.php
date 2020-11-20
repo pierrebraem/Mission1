@@ -14,15 +14,18 @@ include_once "$racine/modele/bd.listepraticient.inc.php";
 if (!empty($_POST))
 {
     $id_praticien = $_POST['praticient'];
-    $id_ville = $_POST['ville'];
     $id_etat = $_POST['etat'];
+    $id_old_praticien = $_POST['submit'];
+    echo var_dump($id_praticien);
+    echo var_dump($id_etat);
+    echo var_dump($id_old_praticien);
 };
 //todo
-if(!empty($id) && isset($id))
+if(!empty($id_praticien) && isset($id_praticien))
 {
     // appel des fonctions permettant de rajouter les donnees dans les bases de données.
-    modifProspect($id,$id_etat);
-    echo "Prospect id=$id modifier";
+    modifProspect($id_praticien, $id_etat, $id_old_praticien);
+    echo "Prospect id=$id_old_praticien modifier avec praticien=$id_praticien et etat=$id_etat";
 }
 //todo test des valeurs dans poste puis modification dans modele.
 ;

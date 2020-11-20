@@ -3,28 +3,17 @@ header( 'content-type: text/html; charset=utf-8' );
 
 include_once "bd.inc.php";
 
-function modifProspect($id,$id_etat) {
-    $resultat = array();
 
-    try {
-        modifprospectProspect($id,$id_etat);
-        
-
-
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-    return $resultat;
-}
-
-
-function modifprospectProspect($id,$id_etat)
+function modifProspect($id_praticien, $id_etat, $id_old_praticien)
 {
     try{
         $cnx = connexionPDO();
         //Supprimer dans table prospect avec l'id_praticien
-        $req = $cnx->prepare("");
+        $req = $cnx->prepare("
+        UPDATE prospect
+        SET id_Praticien = $id_praticien, id_Etat = $id_etat
+        WHERE id_Praticien = $id_old_praticien
+        ");
         $req->execute();
     }
     catch (PDOException $e) {
