@@ -15,10 +15,7 @@ if (!empty($_POST))
 {
     $id_praticien = $_POST['praticient'];
     $id_etat = $_POST['etat'];
-    $id_old_praticien = $_POST['submit'];
-    echo var_dump($id_praticien);
-    echo var_dump($id_etat);
-    echo var_dump($id_old_praticien);
+    $id_old_praticien = $_POST['prospect'];
 };
 //todo
 if(!empty($id_praticien) && isset($id_praticien))

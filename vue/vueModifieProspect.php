@@ -9,6 +9,7 @@ foreach ($listeProspects as $unprospect)
 
     <form $action="modif" method="post">
     <?php //echo var_dump($unprospect['idPraticien']); ?> <!-- !-->
+    <input name="prospect" id="prospect" type="hidden" value="<?php echo $unprospect['idPraticien'] ?>">
     <div>
         <label for="praticient">Praticient :</label>
         <select name="praticient" id="praticient-select">
@@ -51,9 +52,8 @@ foreach ($listeProspects as $unprospect)
         </div>
 
         <div class="button">
-            <button type="submit" name ="submit" value=<?php $unprospect['idPraticien'] ?>> Valider</button>
+            <button type="submit" name ="submit"> Valider</button>
         </div>
-        <?php echo var_dump($unprospect['idPraticien']); ?>
         </p>
     </form>
         <?php
