@@ -40,6 +40,39 @@ function getClientsByIdR($idR) {
     return $resultat;
 }
 
+function AjouterClient($nom, $prenom, $adresse, $ville){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("INSERT INTO praticien(nom, prenom, adresse, id_Ville) VALUES (:nom, :prenom, :adresse, :ville);");
+        $req->bindParam(':nom', $nom, PDO::PARAM_STR, 25);
+        $req->bindParam(':prenom', $prenom, PDO::PARAM_STR, 25);
+        $req->bindParam(':adresse', $adresse, PDO::PARAM_STR, 255);
+        $req->bindValue(':ville', $ville, PDO::PARAM_INT);
+        $req->execute();
+        $idretour = $cnx->lastInsertId();
+    }
+    catch(PDOException $e){
+        print "Erreur !: ". $e->getMessage();
+        die();
+    }
+    return $idretour;
+}
+
+function AjouterClientTable($idPraticien){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("INSERT INTO client(id_Praticien) VALUES (:idPraticien);");
+        $req->bindValue(':idPraticien', $idPraticien, PDO::PARAM_INT);
+        $req->execute();
+        $valider = true;
+    }
+    catch(PDOException $e){
+        print "Erreur !: ". $e.getMessage();
+        die();
+    }
+    return $valider;
+}
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog principal de test
     header('Content-Type:text/plain');

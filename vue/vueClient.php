@@ -1,8 +1,8 @@
 <h1>Ajouter client</h1>
-<form action="" method="post">
+<form $action="client" method="post">
     <p>Nom :<input type="text" name="nom"></input></p>
     <p>Prenom :<input type="text" name="prenom"></input></p>
-    <p>Adresse :<input type="text" name="Adresse"></input></p>
+    <p>Adresse :<input type="text" name="adresse"></input></p>
     <p>Ville :
     <select  name="ville">
         <option value="">--Sélectionner la ville--</option>
@@ -36,8 +36,10 @@ foreach ($listeClient as $unclient)
         <strong>adresse</strong> : <?php echo $unclient['adresse']; ?><br />
         <strong>ville</strong> : <?php echo $unclient['villeNom']; ?><br />
         <strong>Code Postal</strong> : <?php echo $unclient['code_postal']; ?><br />
-        <button type="button" class="btn btn-outline-success">Modifier</button>
-        <button type="button">Supprimer</button>
+        <form $action="ModifierClient" method="post">
+            <input type="submit" name="modifier" value="Modifier"></input>
+            <input type="submit" name="supprimer" value="Supprimer"></input>
+        </form>
     </p>
     </div>
     
