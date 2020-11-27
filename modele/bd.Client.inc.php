@@ -27,7 +27,7 @@ function getClientsByIdR($idR) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select client.id_praticien, praticien.nom, praticien.prenom, praticien.adresse from client INNER JOIN praticien ON client.id_praticien = praticien.id where idR=:idR");
+        $req = $cnx->prepare("select client.id_praticien, praticien.nom, praticien.prenom, praticien.adresse from client INNER JOIN praticien ON client.id_praticien = praticien.id where id_Praticien=:idR");
         $req->bindValue(':idR', $idR, PDO::PARAM_INT);
 
         $req->execute();
@@ -71,6 +71,25 @@ function AjouterClientTable($idPraticien){
         die();
     }
     return $valider;
+}
+
+function ModifierClient($nom, $prenom, $adresse, $ville, $idR){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("UPDATE praticien SET nom = :nom, prenom = :prenom, adresse = :adresse, id_Ville = :ville WHERE id=:idR");
+        $req->bindParam(':nom', $nom, PDO::PARAM_STR, 25);
+        $req->bindParam(':prenom', $prenom, PDO::PARAM_STR, 25);
+        $req->bindParam(':adresse', $adresse, PDO::PARAM_STR, 255);
+        $req->bindValue(':ville', $ville, PDO::PARAM_INT);
+        $req->bindValue(':idR', $idR, PDO::PARAM_INT);
+        $req->execute();
+        $idretour = $cnx->lastInsertId();
+    }
+    catch(PDOException $e){
+        print "Erreur !: ".$e.getMessage();
+        die();
+    }
+    return $idretour;
 }
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {

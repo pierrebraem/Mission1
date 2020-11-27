@@ -31,14 +31,15 @@ foreach ($listeClient as $unclient)
             Client n° <?php echo $i ?> 
         </h2>
     <p>
+        
         <strong>Nom</strong> : <?php echo $unclient['praticienNom']; ?><br />
         <strong>prenom</strong> : <?php echo $unclient['prenom']; ?><br />
         <strong>adresse</strong> : <?php echo $unclient['adresse']; ?><br />
         <strong>ville</strong> : <?php echo $unclient['villeNom']; ?><br />
         <strong>Code Postal</strong> : <?php echo $unclient['code_postal']; ?><br />
-        <form $action="ModifierClient" method="post">
+        <form action="./?action=ModifierClient" method="post">
+            <input type="hidden" name="id" value= <?php echo $unclient['idPraticien']; ?>></input>
             <input type="submit" name="modifier" value="Modifier"></input>
-            <input type="submit" name="supprimer" value="Supprimer"></input>
         </form>
     </p>
     </div>
