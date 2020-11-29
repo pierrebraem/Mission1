@@ -41,6 +41,10 @@ foreach ($listeClient as $unclient)
             <input type="hidden" name="id" value= <?php echo $unclient['idPraticien']; ?>></input>
             <input type="submit" name="modifier" value="Modifier"></input>
         </form>
+        <form action="./?action=SupprimerClient" method="post">
+            <input type="hidden" name="id" value=<?php echo $unclient['idPraticien']; ?>></input>
+            <input type="submit" name="supprimer" value="Supprimer"></input>
+        </form>
     </p>
     </div>
     

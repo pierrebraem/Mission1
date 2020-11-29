@@ -67,7 +67,7 @@ function AjouterClientTable($idPraticien){
         $valider = true;
     }
     catch(PDOException $e){
-        print "Erreur !: ". $e.getMessage();
+        print "Erreur !: ". $e->getMessage();
         die();
     }
     return $valider;
@@ -90,6 +90,35 @@ function ModifierClient($nom, $prenom, $adresse, $ville, $idR){
         die();
     }
     return $idretour;
+}
+
+function SupprimerClient($id){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("DELETE FROM client WHERE id_Praticien=:id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $resultat = true;
+    }
+    catch(PDOException $e){
+        print "Erreur !: ".$e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
+function SupprimerClientPraticien($id){
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("DELETE FROM praticien WHERE id=:id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+        $resultat = true;
+    }
+    catch(PDOException $e){
+        print "Erreur !: ".$e->getMessage();
+        die();
+    }
 }
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
