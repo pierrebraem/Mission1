@@ -10,9 +10,16 @@
         <?php
             foreach($listeVilles as $uneVille)
             {
+                if($uneVille['id'] == $informationclient['id_Ville']){
+                    ?>
+                    <option selected="selected" value=<?php echo $uneVille['id']; ?>><?php echo $uneVille['nom']; ?>, <?php echo $uneVille['code_postal']; ?></option>
+                <?php
+                }
+                else{
             ?>
                 <option value=<?php echo $uneVille['id']; ?>><?php echo $uneVille['nom']; ?>, <?php echo $uneVille['code_postal']; ?></option>
             <?php
+                }
             }
             ?>
     </select>

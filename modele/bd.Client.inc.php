@@ -27,7 +27,7 @@ function getClientsByIdR($idR) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select client.id_praticien, praticien.nom, praticien.prenom, praticien.adresse from client INNER JOIN praticien ON client.id_praticien = praticien.id where id_Praticien=:idR");
+        $req = $cnx->prepare("select client.id_praticien, praticien.nom, praticien.prenom, praticien.adresse, praticien.id_Ville from client INNER JOIN praticien ON client.id_praticien = praticien.id where id_Praticien=:idR");
         $req->bindValue(':idR', $idR, PDO::PARAM_INT);
 
         $req->execute();
@@ -95,6 +95,10 @@ function ModifierClient($nom, $prenom, $adresse, $ville, $idR){
 function SupprimerClient($id){
     try{
         $cnx = connexionPDO();
+        $req = $cnx->prepare("DELETE FROM interesser WHERE id_Client=:id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+
         $req = $cnx->prepare("DELETE FROM client WHERE id_Praticien=:id");
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
