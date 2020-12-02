@@ -12,6 +12,7 @@ function controleurPrincipal($action) {
     $lesActions["client"] = "Client.php";
     $lesActions["ModifierClient"] = "modifierclient.php";
     $lesActions["SupprimerClient"] = "supprimerclient.php";
+    $lesActions["prospects"] = "Prospects.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];
