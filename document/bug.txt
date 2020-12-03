@@ -1,0 +1,2 @@
+Bug lors de l'ajout, modification ou suppression d'un client, il faut recliquer sur le bouton "client" sur le menu pour que ça s'actualise.
+Si on réactualise la page, la rêquete sera re executer, ce qui peu créer des bugs
