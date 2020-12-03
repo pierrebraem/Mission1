@@ -11,12 +11,24 @@ include_once "$racine/modele/bd.etat.inc.php";
 // recuperation des donnees GET, POST, et SESSION
 
 //todo
+
 if (!empty($_POST))
 {
+    $id = $_POST['submit'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse = $_POST['adresse'];
+    
 }
-;
+
 //todo test des valeurs dans poste puis modification dans modele.
-;
+if(!empty($nom) && isset($nom) && !empty($prenom) && isset($prenom) && !empty($adresse) && isset($adresse))
+{
+    modifProspect($id,$nom,$prenom,$adresse);
+    
+}
+
+
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 $listeProspects = getProspects();
